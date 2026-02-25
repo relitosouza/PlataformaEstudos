@@ -28,9 +28,11 @@ export default function useProgresso() {
   }
 
   function percentualSistema(sistemaId, totalModulos) {
-    const prefixo = sistemaId === 'materiais' ? 'mat-' : 'cont-'
-    const concluídosSistema = concluidos.filter(id => id.startsWith(prefixo))
-    return Math.floor((concluídosSistema.length / totalModulos) * 100)
+    if (totalModulos === 0) return 0
+    const prefixos = { materiais: 'mat-', contabil: 'cont-' }
+    const prefixo = prefixos[sistemaId] ?? ''
+    const concluidosSistema = concluidos.filter(id => id.startsWith(prefixo))
+    return Math.floor((concluidosSistema.length / totalModulos) * 100)
   }
 
   return { marcarConcluido, isConcluido, percentualSistema, concluidos }
