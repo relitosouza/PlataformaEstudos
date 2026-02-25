@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,6 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        "primary": "#137fec",
+        "background-light": "#f6f7f8",
+        "background-dark": "#101922",
         brand: {
           50:  '#eff6ff',
           100: '#dbeafe',
@@ -21,9 +25,19 @@ export default {
         }
       },
       fontFamily: {
+        "display": ["Lexend"],
         sans: ['Inter', 'sans-serif'],
-      }
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem", 
+        "lg": "0.5rem", 
+        "xl": "0.75rem", 
+        "full": "9999px"
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries'),
+  ],
 }

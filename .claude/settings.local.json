@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uipro init:*)",
+      "Bash(cd /e/projetos/AmCP && echo \"y\" | npm create vite@latest . -- --template react 2>&1)",
+      "Bash(echo FAILED_WITH_YES:*)",
+      "Bash(cd /e/projetos/AmCP && printf \"y\\\\n\" | npm create vite@latest . -- --template react 2>&1)",
+      "Bash(cd /e/projetos/AmCP && node -e \"\nconst { execSync } = require\\('child_process'\\);\nconst result = execSync\\('npm create vite@latest . -- --template react', { \n  input: 'y\\\\n', \n  encoding: 'utf8',\n  stdio: ['pipe', 'pipe', 'pipe']\n}\\);\nconsole.log\\(result\\);\n\" 2>&1)",
+      "Bash(cat:*)",
+      "Bash(cd /e/projetos/AmCP && npm install react react-dom 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npm install -D vite @vitejs/plugin-react 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npm install react-router-dom 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npm install -D tailwindcss postcss autoprefixer 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npx tailwindcss init -p 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npm install -D tailwindcss@3 postcss autoprefixer 2>&1)",
+      "Bash(cd /e/projetos/AmCP && ./node_modules/.bin/tailwindcss init -p 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom 2>&1)",
+      "Bash(mkdir -p /e/projetos/AmCP/src/test && cat > /e/projetos/AmCP/src/test/setup.js << 'EOF'\nimport '@testing-library/jest-dom'\nEOF)",
+      "Bash(cd /e/projetos/AmCP && npm run build 2>&1)",
+      "Bash(cd /e/projetos/AmCP && git init 2>&1)",
+      "Bash(cd /e/projetos/AmCP && git add .gitignore package.json package-lock.json index.html vite.config.js tailwind.config.js postcss.config.js src/ public/ 2>&1)",
+      "Bash(cd /e/projetos/AmCP && git commit -m \"$\\(cat <<'EOF'\nfeat: setup Vite + React + Tailwind + React Router + Vitest\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" 2>&1)",
+      "Bash(git:*)",
+      "Bash(tail:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(node:*)",
+      "Bash(cd /e/projetos/AmCP && npx vitest run 2>&1)",
+      "Bash(cd /e/projetos/AmCP && npx vitest run src/hooks/useProgresso.test.js 2>&1)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}

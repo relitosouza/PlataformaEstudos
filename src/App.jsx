@@ -7,16 +7,16 @@ import Sobre from './pages/Sobre'
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header />
-      <main className="flex-1">
+    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+      <div className="layout-container flex h-full grow flex-col">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/trilha" element={<Trilha />} />
           <Route path="/sobre" element={<Sobre />} />
         </Routes>
-      </main>
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }
