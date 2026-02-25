@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 export default function QuizBlock({ quiz, onConcluir }) {
+  if (!quiz || quiz.length === 0) return null
+
   const [respostas, setRespostas] = useState({})
   const [enviado, setEnviado] = useState(false)
 

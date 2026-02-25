@@ -1,4 +1,4 @@
-export default function SystemTabs({ sistemas, ativo, onSelect }) {
+export default function SystemTabs({ sistemas = [], ativo, onSelect }) {
   return (
     <div className="flex gap-2 border-b border-gray-200 mb-6">
       {sistemas.map(s => (

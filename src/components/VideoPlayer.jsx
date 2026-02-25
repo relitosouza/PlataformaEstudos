@@ -3,7 +3,7 @@ export default function VideoPlayer({ url }) {
 
   return (
     <div className="mb-6">
-      <h3 className="font-semibold text-gray-700 mb-2">🎥 Vídeo</h3>
+      <h3 className="font-semibold text-gray-700 mb-2"><span aria-hidden="true">🎥</span> Vídeo</h3>
       <div className="aspect-video rounded-lg overflow-hidden bg-gray-900">
         <iframe
           src={url}
