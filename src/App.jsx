@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Trilha from './pages/Trilha'
 import Sobre from './pages/Sobre'
+import Aula from './pages/Aula'
+import Manuais from './pages/Manuais'
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/trilha" element={<Trilha />} />
+          <Route path="/aula" element={<Aula />} />
+          <Route path="/manuais" element={<Manuais />} />
           <Route path="/sobre" element={<Sobre />} />
         </Routes>
         <Footer />

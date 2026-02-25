@@ -10,38 +10,38 @@ export default function Footer() {
             <h2 className="text-slate-900 dark:text-white text-lg font-bold">TutorialSystem</h2>
           </div>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Providing high-quality educational resources for software systems and technical mastery since 2018.
+            Fornecendo recursos educacionais de alta qualidade para sistemas de software e domínio técnico desde 2018.
           </p>
         </div>
         <div>
-          <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Platform</h4>
+          <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Plataforma</h4>
           <ul className="flex flex-col gap-3 text-sm text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Courses</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Video Library</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Manuals</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Live Workshops</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Cursos</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Biblioteca de Vídeos</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Manuais</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Workshops ao Vivo</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Support</h4>
+          <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Suporte</h4>
           <ul className="flex flex-col gap-3 text-sm text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Help Center</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Community Forum</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Contact Us</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">API Docs</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Fórum da Comunidade</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Contato</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Docs da API</a></li>
           </ul>
         </div>
         <div>
           <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Legal</h4>
           <ul className="flex flex-col gap-3 text-sm text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Política de Privacidade</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Termos de Serviço</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Política de Cookies</a></li>
           </ul>
         </div>
       </div>
       <div className="max-w-[1400px] mx-auto pt-12 mt-12 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-        <p>© 2024 TutorialSystem. All rights reserved.</p>
+        <p>© 2024 TutorialSystem. Todos os direitos reservados.</p>
         <div className="flex items-center gap-6">
           <a className="hover:text-primary" href="#">Twitter</a>
           <a className="hover:text-primary" href="#">LinkedIn</a>
