@@ -16,7 +16,7 @@ export default function Trilha() {
   const [moduloAberto, setModuloAberto] = useState(null)
   const { isConcluido, marcarConcluido, percentualSistema } = useProgresso()
 
-  const sistema = cursos.sistemas.find(s => s.id === sistemaAtivo)
+  const sistema = cursos.sistemas.find(s => s.id === sistemaAtivo) || cursos.sistemas[0]
   const percentual = percentualSistema(sistemaAtivo, sistema.modulos.length)
 
   function handleSelectSistema(id) {

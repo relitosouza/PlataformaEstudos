@@ -18,6 +18,7 @@ export default function Sobre() {
     const nome = form.nome.value.trim()
     const email = form.email.value.trim()
     const mensagem = form.mensagem.value.trim()
+    if (!nome || !email || !mensagem) return
     const subject = encodeURIComponent(`Contato de ${nome}`)
     const body = encodeURIComponent(`${mensagem}\n\nEmail de retorno: ${email}`)
     window.location.href = `mailto:smarapd@exemplo.gov.br?subject=${subject}&body=${body}`
