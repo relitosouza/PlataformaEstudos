@@ -1,0 +1,194 @@
+{
+  "sistemas": [
+    {
+      "id": "materiais",
+      "nome": "Sistema de Materiais",
+      "icone": "📦",
+      "descricao": "Gerencie requisições, almoxarifado e controle de estoque patrimonial da organização.",
+      "modulos": [
+        {
+          "id": "mat-01",
+          "titulo": "Visão Geral do Sistema de Materiais",
+          "nivel": "básico",
+          "conteudo": "## O que é o Sistema de Materiais?\n\nO Sistema de Materiais (SMARAPD-MAT) é responsável pelo controle e gestão de todos os materiais e insumos da organização. Através dele é possível:\n\n- **Registrar entradas e saídas** de materiais do almoxarifado\n- **Consultar saldos** de estoque em tempo real\n- **Emitir requisições** internas de material\n- **Gerar relatórios** de movimentação\n\n### Principais Módulos\n\n1. Cadastro de Materiais\n2. Controle de Estoque\n3. Requisições Internas\n4. Relatórios e Consultas",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "Qual a principal função do Sistema de Materiais?",
+              "opcoes": [
+                "Controlar folha de pagamento",
+                "Gerenciar estoque e movimentação de materiais",
+                "Emitir notas fiscais",
+                "Cadastrar fornecedores apenas"
+              ],
+              "correta": 1
+            },
+            {
+              "pergunta": "Qual das opções abaixo NÃO é uma funcionalidade do Sistema de Materiais?",
+              "opcoes": [
+                "Registro de entradas de materiais",
+                "Consulta de saldo em estoque",
+                "Lançamento de despesas contábeis",
+                "Emissão de requisições internas"
+              ],
+              "correta": 2
+            }
+          ]
+        },
+        {
+          "id": "mat-02",
+          "titulo": "Cadastro e Consulta de Materiais",
+          "nivel": "básico",
+          "conteudo": "## Cadastrando um Material\n\nPara cadastrar um novo material no sistema:\n\n1. Acesse o menu **Cadastros > Materiais**\n2. Clique em **Novo**\n3. Preencha os campos obrigatórios:\n   - **Código:** gerado automaticamente\n   - **Descrição:** nome completo do material\n   - **Unidade de medida:** UN, KG, L, M, etc.\n   - **Grupo:** categoria do material\n4. Clique em **Salvar**\n\n## Consultando Materiais\n\nUse o filtro de busca por código, descrição ou grupo. O resultado exibe saldo atual, localização no almoxarifado e histórico de movimentações.",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "Qual o caminho correto para cadastrar um novo material?",
+              "opcoes": [
+                "Relatórios > Materiais > Novo",
+                "Cadastros > Materiais > Novo",
+                "Estoque > Entrada > Cadastrar",
+                "Financeiro > Materiais > Incluir"
+              ],
+              "correta": 1
+            }
+          ]
+        },
+        {
+          "id": "mat-03",
+          "titulo": "Quiz Final — Sistema de Materiais",
+          "nivel": "avançado",
+          "conteudo": "## Teste seus conhecimentos!\n\nResponda as questões abaixo para verificar seu aprendizado sobre o Sistema de Materiais.",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "Uma requisição interna de material deve ser emitida por qual setor?",
+              "opcoes": [
+                "Pelo almoxarifado central",
+                "Pelo setor solicitante",
+                "Pela contabilidade",
+                "Pela direção"
+              ],
+              "correta": 1
+            },
+            {
+              "pergunta": "O saldo de estoque é atualizado:",
+              "opcoes": [
+                "Manualmente pelo almoxarife toda semana",
+                "Automaticamente a cada entrada ou saída registrada",
+                "Apenas no fechamento mensal",
+                "Somente após inventário anual"
+              ],
+              "correta": 1
+            },
+            {
+              "pergunta": "Qual relatório mostra todas as movimentações de um material em um período?",
+              "opcoes": [
+                "Relatório de Cadastro",
+                "Relatório de Saldo",
+                "Relatório de Movimentação",
+                "Relatório de Requisições Abertas"
+              ],
+              "correta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contabil",
+      "nome": "Sistema Contábil",
+      "icone": "💰",
+      "descricao": "Realize lançamentos contábeis, controle de despesas e geração de relatórios financeiros.",
+      "modulos": [
+        {
+          "id": "cont-01",
+          "titulo": "Visão Geral do Sistema Contábil",
+          "nivel": "básico",
+          "conteudo": "## O que é o Sistema Contábil?\n\nO Sistema Contábil (SMARAPD-CONT) é a ferramenta de gestão financeira e contábil da organização. Ele permite:\n\n- **Registrar lançamentos contábeis** de receitas e despesas\n- **Controlar o orçamento** por centro de custo\n- **Gerar balancetes** e demonstrativos financeiros\n- **Conciliar contas** bancárias e financeiras\n\n### Plano de Contas\n\nO sistema utiliza um plano de contas estruturado em:\n\n1. **Ativo** — bens e direitos\n2. **Passivo** — obrigações\n3. **Receitas** — entradas financeiras\n4. **Despesas** — saídas financeiras",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "O que representa o ATIVO no plano de contas?",
+              "opcoes": [
+                "As obrigações da organização",
+                "Os bens e direitos da organização",
+                "As despesas do período",
+                "O resultado do exercício"
+              ],
+              "correta": 1
+            },
+            {
+              "pergunta": "Qual a função principal do Sistema Contábil?",
+              "opcoes": [
+                "Controlar estoque de materiais",
+                "Gerenciar recursos humanos",
+                "Registrar e controlar movimentações financeiras e contábeis",
+                "Emitir ordens de compra"
+              ],
+              "correta": 2
+            }
+          ]
+        },
+        {
+          "id": "cont-02",
+          "titulo": "Lançamentos e Relatórios Contábeis",
+          "nivel": "intermediário",
+          "conteudo": "## Realizando um Lançamento Contábil\n\nTodo lançamento contábil segue o princípio da **partida dupla**: débito e crédito sempre em equilíbrio.\n\n### Passo a passo:\n\n1. Acesse **Contabilidade > Lançamentos > Novo**\n2. Informe a **data** do lançamento\n3. Selecione a **conta de débito** (o que aumenta)\n4. Selecione a **conta de crédito** (o que diminui)\n5. Informe o **valor** e o **histórico**\n6. Clique em **Confirmar**\n\n## Relatórios Disponíveis\n\n| Relatório | Descrição |\n|-----------|----------|\n| Balancete | Saldos de todas as contas |\n| DRE | Demonstração de Resultado |\n| Razão | Movimentação conta a conta |\n| Diário | Todos os lançamentos do período |",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "O princípio da partida dupla significa que:",
+              "opcoes": [
+                "Todo lançamento deve ser feito duas vezes",
+                "Débito e crédito devem sempre estar em equilíbrio",
+                "São necessários dois usuários para confirmar um lançamento",
+                "O lançamento é revisado em dois momentos"
+              ],
+              "correta": 1
+            }
+          ]
+        },
+        {
+          "id": "cont-03",
+          "titulo": "Quiz Final — Sistema Contábil",
+          "nivel": "avançado",
+          "conteudo": "## Teste seus conhecimentos!\n\nResponda as questões abaixo para verificar seu aprendizado sobre o Sistema Contábil.",
+          "videoUrl": "",
+          "quiz": [
+            {
+              "pergunta": "Qual relatório apresenta o saldo de TODAS as contas em um período?",
+              "opcoes": [
+                "Razão",
+                "Diário",
+                "Balancete",
+                "DRE"
+              ],
+              "correta": 2
+            },
+            {
+              "pergunta": "No plano de contas, onde são registradas as dívidas da organização?",
+              "opcoes": [
+                "Ativo",
+                "Passivo",
+                "Receitas",
+                "Patrimônio Líquido"
+              ],
+              "correta": 1
+            },
+            {
+              "pergunta": "O Razão é usado para:",
+              "opcoes": [
+                "Ver o resultado do exercício",
+                "Listar todas as contas com saldo zero",
+                "Acompanhar a movimentação de uma conta específica",
+                "Conciliar o caixa diário"
+              ],
+              "correta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
