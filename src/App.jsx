@@ -8,6 +8,7 @@ import Aula from './pages/Aula'
 import Manuais from './pages/Manuais'
 import CadastrarVideo from './pages/CadastrarVideo'
 import GerenciarApostilas from './pages/GerenciarApostilas'
+import Cursos from './pages/Cursos'
 
 export default function App() {
   const location = useLocation()
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/trilha" element={<Trilha />} />
+          <Route path="/cursos" element={<Cursos />} />
           <Route path="/aula" element={<Aula />} />
           <Route path="/manuais" element={<Manuais />} />
           <Route path="/sobre" element={<Sobre />} />

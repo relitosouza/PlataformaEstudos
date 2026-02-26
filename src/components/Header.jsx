@@ -11,7 +11,7 @@ export default function Header() {
           <h2 className="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">TutorialSystem</h2>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Cursos</Link>
+          <Link to="/cursos" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Cursos</Link>
           <Link to="/trilha" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Biblioteca de Vídeos</Link>
           <Link to="/manuais" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Manuais</Link>
           <a className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Comunidade</a>
