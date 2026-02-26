@@ -14,7 +14,8 @@ export default function Header() {
           <Link to="/cursos" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Cursos</Link>
           <Link to="/trilha" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Biblioteca de Vídeos</Link>
           <Link to="/manuais" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Manuais</Link>
-          <a className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Comunidade</a>
+          <Link to="/certificados" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Certificados</Link>
+          <Link to="/comunidade" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Comunidade</Link>
         </nav>
       </div>
       <div className="flex flex-1 justify-end gap-6 items-center">

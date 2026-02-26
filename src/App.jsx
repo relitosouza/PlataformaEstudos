@@ -10,6 +10,9 @@ import CadastrarVideo from './pages/CadastrarVideo'
 import GerenciarApostilas from './pages/GerenciarApostilas'
 import Cursos from './pages/Cursos'
 import LoginCMS from './pages/LoginCMS'
+import Comunidade from './pages/Comunidade'
+import Certificados from './pages/Certificados'
+import DashboardCMS from './pages/DashboardCMS'
 
 export default function App() {
   const location = useLocation()
@@ -25,8 +28,11 @@ export default function App() {
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/aula" element={<Aula />} />
           <Route path="/manuais" element={<Manuais />} />
+          <Route path="/comunidade" element={<Comunidade />} />
+          <Route path="/certificados" element={<Certificados />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cms/login" element={<LoginCMS />} />
+          <Route path="/cms/dashboard" element={<DashboardCMS />} />
           <Route path="/cms/cadastrar-video" element={<CadastrarVideo />} />
           <Route path="/cms/gerenciar-apostilas" element={<GerenciarApostilas />} />
         </Routes>
