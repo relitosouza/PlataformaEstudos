@@ -21,8 +21,7 @@ export default function Footer() {
             <li><Link className="hover:text-primary transition-colors" to="/cursos">Cursos</Link></li>
             <li><Link className="hover:text-primary transition-colors" to="/trilha">Biblioteca de Vídeos</Link></li>
             <li><Link className="hover:text-primary transition-colors" to="/manuais">Manuais</Link></li>
-            <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/cadastrar-video">Acesso CMS: Aulas</Link></li>
-            <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/gerenciar-apostilas">Acesso CMS: Apostilas</Link></li>
+            <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/login">Entrar no Painel CMS</Link></li>
           </ul>
         </div>
         <div>

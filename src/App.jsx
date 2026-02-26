@@ -9,6 +9,7 @@ import Manuais from './pages/Manuais'
 import CadastrarVideo from './pages/CadastrarVideo'
 import GerenciarApostilas from './pages/GerenciarApostilas'
 import Cursos from './pages/Cursos'
+import LoginCMS from './pages/LoginCMS'
 
 export default function App() {
   const location = useLocation()
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/aula" element={<Aula />} />
           <Route path="/manuais" element={<Manuais />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cms/login" element={<LoginCMS />} />
           <Route path="/cms/cadastrar-video" element={<CadastrarVideo />} />
           <Route path="/cms/gerenciar-apostilas" element={<GerenciarApostilas />} />
         </Routes>
