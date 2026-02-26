@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 lg:px-20 py-12 mt-auto">
@@ -16,10 +18,11 @@ export default function Footer() {
         <div>
           <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Plataforma</h4>
           <ul className="flex flex-col gap-3 text-sm text-slate-500">
-            <li><a className="hover:text-primary transition-colors" href="#">Cursos</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Biblioteca de Vídeos</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Manuais</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Workshops ao Vivo</a></li>
+            <li><Link className="hover:text-primary transition-colors" to="/">Cursos</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/trilha">Biblioteca de Vídeos</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/manuais">Manuais</Link></li>
+            <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/cadastrar-video">Acesso CMS: Aulas</Link></li>
+            <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/gerenciar-apostilas">Acesso CMS: Apostilas</Link></li>
           </ul>
         </div>
         <div>

@@ -30,9 +30,9 @@ export default function Home() {
               <Link to="/aula" className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
                 Começar a Aprender
               </Link>
-              <button className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+              <Link to="/trilha" className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
                 Explorar Biblioteca
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -44,9 +44,9 @@ export default function Home() {
             <h2 className="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">Tutoriais em Destaque</h2>
             <p className="text-slate-500 text-sm">As lições em vídeo mais populares desta semana</p>
           </div>
-          <a className="text-primary text-sm font-semibold flex items-center gap-1 hover:underline" href="#">
+          <Link to="/trilha" className="text-primary text-sm font-semibold flex items-center gap-1 hover:underline">
             Ver Todos <span className="material-symbols-outlined text-sm">chevron_right</span>
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <Link to="/aula" className="flex flex-col group cursor-pointer block">
@@ -102,9 +102,9 @@ export default function Home() {
             <h2 className="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">Manuais Recentes</h2>
             <p className="text-slate-500 text-sm">Guias para download e documentação técnica</p>
           </div>
-          <a className="text-primary text-sm font-semibold flex items-center gap-1 hover:underline" href="#">
+          <Link to="/manuais" className="text-primary text-sm font-semibold flex items-center gap-1 hover:underline">
             Ver Todos <span className="material-symbols-outlined text-sm">chevron_right</span>
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="flex items-center p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow group cursor-pointer">

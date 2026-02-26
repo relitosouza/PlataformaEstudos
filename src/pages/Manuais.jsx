@@ -56,7 +56,7 @@ export default function Manuais() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="flex flex-col gap-2">
                         <nav className="flex text-xs font-medium text-slate-500 gap-2 items-center mb-1">
-                            <span>Biblioteca</span>
+                            <Link className="hover:text-primary transition-colors" to="/">Início</Link>
                             <span className="material-symbols-outlined text-[14px]">chevron_right</span>
                             <span className="text-primary">Biblioteca de Manuais e Apostilas</span>
                         </nav>
