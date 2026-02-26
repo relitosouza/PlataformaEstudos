@@ -47,7 +47,7 @@ export default function Cursos() {
                 <section className="mb-12">
                     <h2 className="text-slate-900 dark:text-white text-2xl font-bold mb-6">Cursos</h2>
                     <div className="group relative flex flex-col xl:flex-row items-stretch rounded-xl overflow-hidden shadow-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                        <Link to="/aula" className="relative w-full xl:w-2/3 aspect-video bg-slate-200 dark:bg-slate-800 bg-center bg-cover flex items-center justify-center cursor-pointer block" data-alt="Cena de escritório com tecnologia moderna e dashboards" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8nV2IrqBBVjk_paJp2hZcwKN9CXN8b5k_yGzqhc1YnTSvFduyD7STbL7bWqBqMrkmMEsjUgdEuoWxhrsrem4Yx9-4fBIe5giNICnWZ7Q7zfJk1-w_bXhv7sZGWkg2ECppSWR0zq4rZ3WkFCAWL76KGrzImnrtscyWW3ZF1thd_3MOy5v3BR66FstDVsB5XZDAL6tqxGfV0s9KPr1hTVml54fJHe4zZV76X7aWAS2ts4u4WEwk7NKbqWbH4hr3jDysHQMtad8G-2Xe')" }}>
+                        <Link to="/curso" className="relative w-full xl:w-2/3 aspect-video bg-slate-200 dark:bg-slate-800 bg-center bg-cover flex items-center justify-center cursor-pointer block" data-alt="Cena de escritório com tecnologia moderna e dashboards" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8nV2IrqBBVjk_paJp2hZcwKN9CXN8b5k_yGzqhc1YnTSvFduyD7STbL7bWqBqMrkmMEsjUgdEuoWxhrsrem4Yx9-4fBIe5giNICnWZ7Q7zfJk1-w_bXhv7sZGWkg2ECppSWR0zq4rZ3WkFCAWL76KGrzImnrtscyWW3ZF1thd_3MOy5v3BR66FstDVsB5XZDAL6tqxGfV0s9KPr1hTVml54fJHe4zZV76X7aWAS2ts4u4WEwk7NKbqWbH4hr3jDysHQMtad8G-2Xe')" }}>
                             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all"></div>
                             <div className="z-10 bg-primary/90 text-white w-20 h-20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
                                 <span className="material-symbols-outlined text-4xl">play_arrow</span>
@@ -63,8 +63,8 @@ export default function Cursos() {
                                 Descubra as atualizações mais recentes no módulo fiscal e aprenda como automatizar o envio de documentos para a contabilidade em tempo real.
                             </p>
                             <div className="flex gap-4 mt-2">
-                                <Link to="/aula" className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
-                                    Assistir Agora
+                                <Link to="/curso" className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                    Ver Detalhes do Curso
                                 </Link>
                                 <button className="flex items-center justify-center w-12 h-12 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">
                                     <span className="material-symbols-outlined">bookmark</span>

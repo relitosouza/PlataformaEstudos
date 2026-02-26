@@ -13,6 +13,7 @@ import LoginCMS from './pages/LoginCMS'
 import Comunidade from './pages/Comunidade'
 import Certificados from './pages/Certificados'
 import DashboardCMS from './pages/DashboardCMS'
+import CursoDetalhes from './pages/CursoDetalhes'
 
 export default function App() {
   const location = useLocation()
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/trilha" element={<Trilha />} />
           <Route path="/cursos" element={<Cursos />} />
+          <Route path="/curso" element={<CursoDetalhes />} />
           <Route path="/aula" element={<Aula />} />
           <Route path="/manuais" element={<Manuais />} />
           <Route path="/comunidade" element={<Comunidade />} />
