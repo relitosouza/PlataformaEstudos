@@ -1,6 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function DashboardCMS() {
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.removeItem('isAuthenticated')
+        navigate('/')
+    }
+
     return (
         <div className="flex h-full grow flex-col bg-slate-50 dark:bg-slate-950">
             {/* Minimal Dashboard Header for CMS */}
@@ -18,7 +25,7 @@ export default function DashboardCMS() {
                         <Link to="/cms/gerenciar-apostilas" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Apostilas</Link>
                         <a href="#" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Usuários</a>
                     </nav>
-                    <Link to="/" className="text-sm font-bold text-slate-500 px-3 py-1.5 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">Sair</Link>
+                    <button onClick={handleLogout} className="text-sm font-bold text-slate-500 px-3 py-1.5 rounded bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition cursor-pointer">Sair</button>
                 </div>
             </header>
 

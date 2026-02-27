@@ -8,15 +8,18 @@ export default function CadastrarVideo() {
     const [categoria, setCategoria] = useState('');
     const [dificuldade, setDificuldade] = useState('beg');
     const [urlVideo, setUrlVideo] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleSave = () => {
+    const handleSave = async () => {
         if (!titulo || !urlVideo) {
             alert("Por favor, preencha o título e a URL do vídeo.");
             return;
         }
 
+        setIsLoading(true);
+
         const newVideo = {
-            id: Date.now(),
+            action: 'createVideo',
             titulo,
             descricao,
             categoria,
@@ -28,12 +31,23 @@ export default function CadastrarVideo() {
             date: new Date().toLocaleDateString('pt-BR')
         };
 
-        const existingVideos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
-        existingVideos.unshift(newVideo);
-        localStorage.setItem('cadastrados_videos', JSON.stringify(existingVideos));
+        try {
+            await fetch(import.meta.env.VITE_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8', // Plain text to avoid CORS preflight issues with Google Apps Script
+                },
+                body: JSON.stringify(newVideo)
+            });
 
-        alert("Vídeo cadastrado com sucesso!");
-        navigate('/biblioteca-videos');
+            alert("Vídeo cadastrado com sucesso!");
+            navigate('/biblioteca-videos');
+        } catch (error) {
+            console.error(error);
+            alert("Erro de conexão ao cadastrar vídeo na planilha. Verifique a URL da API no arquivo .env");
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
@@ -48,7 +62,7 @@ export default function CadastrarVideo() {
                         <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">CMS Educacional</h2>
                     </div>
                     <nav className="hidden md:flex items-center gap-9">
-                        <Link to="/" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal">Dashboard</Link>
+                        <Link to="/cms/dashboard" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal">Dashboard</Link>
                         <Link to="/cms/cadastrar-video" className="text-primary text-sm font-medium leading-normal border-b-2 border-primary">Aulas</Link>
                         <Link to="/manuais" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal">Biblioteca</Link>
                         <a className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Alunos</a>
@@ -64,6 +78,9 @@ export default function CadastrarVideo() {
                         </div>
                     </label>
                     <div className="flex gap-2">
+                        <button onClick={() => { localStorage.removeItem('isAuthenticated'); navigate('/'); }} className="flex cursor-pointer items-center justify-center rounded-lg h-10 px-3 bg-red-50 dark:bg-red-900/20 text-red-600 hover:bg-red-100 transition-colors">
+                            <span className="material-symbols-outlined text-[20px] mr-1">logout</span> Sair
+                        </button>
                         <button className="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-colors">
                             <span className="material-symbols-outlined text-[20px]">notifications</span>
                         </button>
@@ -197,9 +214,18 @@ export default function CadastrarVideo() {
                             </section>
 
                             <section className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-                                <button onClick={handleSave} className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
-                                    <span className="material-symbols-outlined">publish</span>
-                                    Publicar Aula
+                                <button onClick={handleSave} disabled={isLoading} className="w-full bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
+                                    {isLoading ? (
+                                        <>
+                                            <span className="material-symbols-outlined animate-spin">progress_activity</span>
+                                            Salvando na Planilha...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <span className="material-symbols-outlined">publish</span>
+                                            Publicar Aula
+                                        </>
+                                    )}
                                 </button>
                                 <button className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
                                     <span className="material-symbols-outlined">save</span>

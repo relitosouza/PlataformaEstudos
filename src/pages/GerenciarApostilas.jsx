@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function GerenciarApostilas() {
+    const navigate = useNavigate();
+
     return (
         <div className="flex h-full grow flex-col">
             <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3 sticky top-0 z-50">
@@ -12,7 +14,7 @@ export default function GerenciarApostilas() {
                         <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">CMS Educacional</h2>
                     </div>
                     <nav className="hidden md:flex items-center gap-9">
-                        <Link to="/" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors">Dashboard</Link>
+                        <Link to="/cms/dashboard" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors">Dashboard</Link>
                         <Link to="/cms/cadastrar-video" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors">Videoaulas</Link>
                         <Link to="/cms/gerenciar-apostilas" className="text-primary text-sm font-bold leading-normal border-b-2 border-primary py-1">Apostilas</Link>
                         <a className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Usuários</a>
@@ -28,6 +30,9 @@ export default function GerenciarApostilas() {
                         </div>
                     </label>
                     <div className="flex gap-2">
+                        <button onClick={() => { localStorage.removeItem('isAuthenticated'); navigate('/'); }} className="flex cursor-pointer items-center justify-center rounded-lg h-10 px-3 bg-red-50 dark:bg-red-900/20 text-red-600 hover:bg-red-100 transition-colors">
+                            <span className="material-symbols-outlined text-[20px] mr-1">logout</span> Sair
+                        </button>
                         <button className="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                             <span className="material-symbols-outlined">notifications</span>
                         </button>

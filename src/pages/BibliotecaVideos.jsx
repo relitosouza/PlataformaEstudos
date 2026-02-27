@@ -3,10 +3,35 @@ import { useState, useEffect } from 'react'
 
 export default function BibliotecaVideos() {
   const [videosCadastrados, setVideosCadastrados] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const videos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
-    setVideosCadastrados(videos);
+    const loadVideos = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}?action=getVideos`);
+        if (response.ok) {
+          const data = await response.json();
+          // Certifique-se de que os videos mais recentes apareçam primeiro
+          setVideosCadastrados(data.reverse());
+        }
+      } catch (error) {
+        console.error("Erro ao puxar da planilha (fallback pro localstorage):", error);
+        // Fallback para não quebrar a tela pra testar
+        const videos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
+        setVideosCadastrados(videos);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (import.meta.env.VITE_API_URL && import.meta.env.VITE_API_URL !== "COLOQUE_AQUI_A_URL_DO_SEU_WEBAPP_DO_APPS_SCRIPT") {
+      loadVideos();
+    } else {
+      // Se não tem URL da planilha configurada, puxa do localstorage
+      const videos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
+      setVideosCadastrados(videos);
+      setIsLoading(false);
+    }
   }, []);
 
   return (
@@ -89,9 +114,17 @@ export default function BibliotecaVideos() {
             <a className="text-primary text-sm font-semibold hover:underline" href="#">Ver tudo</a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Loading State */}
+            {isLoading && (
+              <div className="col-span-full flex justify-center items-center py-12">
+                <span className="material-symbols-outlined animate-spin text-primary text-4xl">progress_activity</span>
+                <span className="ml-3 text-slate-500 font-medium">Carregando da planilha...</span>
+              </div>
+            )}
+
             {/* Vídeos Cadastrados Dinamicamente */}
-            {videosCadastrados.map((video) => (
-              <Link key={video.id} to="/aula" className="group flex flex-col gap-3">
+            {!isLoading && videosCadastrados.map((video, idx) => (
+              <Link key={video.id || idx} to="/aula" className="group flex flex-col gap-3">
                 <div className="relative aspect-video rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800 cursor-pointer">
                   <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: `url('${video.thumbnail}')` }}></div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">

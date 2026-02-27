@@ -14,6 +14,7 @@ import Comunidade from './pages/Comunidade'
 import Certificados from './pages/Certificados'
 import DashboardCMS from './pages/DashboardCMS'
 import CursoDetalhes from './pages/CursoDetalhes'
+import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
   const location = useLocation()
@@ -34,9 +35,9 @@ export default function App() {
           <Route path="/certificados" element={<Certificados />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cms/login" element={<LoginCMS />} />
-          <Route path="/cms/dashboard" element={<DashboardCMS />} />
-          <Route path="/cms/cadastrar-video" element={<CadastrarVideo />} />
-          <Route path="/cms/gerenciar-apostilas" element={<GerenciarApostilas />} />
+          <Route path="/cms/dashboard" element={<ProtectedRoute><DashboardCMS /></ProtectedRoute>} />
+          <Route path="/cms/cadastrar-video" element={<ProtectedRoute><CadastrarVideo /></ProtectedRoute>} />
+          <Route path="/cms/gerenciar-apostilas" element={<ProtectedRoute><GerenciarApostilas /></ProtectedRoute>} />
         </Routes>
         {!isCMS && <Footer />}
       </div>

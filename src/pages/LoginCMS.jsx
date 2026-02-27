@@ -8,7 +8,12 @@ export default function LoginCMS() {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        navigate('/cms/dashboard')
+        if (email === 'admin@educacao.com.br' && senha === 'admin123') {
+            localStorage.setItem('isAuthenticated', 'true')
+            navigate('/cms/dashboard')
+        } else {
+            alert('Credenciais inválidas. Utilize admin@educacao.com.br / admin123 para testar.')
+        }
     }
 
     return (
