@@ -7,7 +7,7 @@ export default function Aula() {
                 <nav className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
                     <Link className="hover:text-primary" to="/">Início</Link>
                     <span className="material-symbols-outlined text-xs">chevron_right</span>
-                    <Link className="hover:text-primary" to="/trilha">Básicos do Sistema</Link>
+                    <Link className="hover:text-primary" to="/biblioteca-videos">Básicos do Sistema</Link>
                     <span className="material-symbols-outlined text-xs">chevron_right</span>
                     <span className="text-slate-900 dark:text-slate-100">Aula 1: Introdução</span>
                 </nav>

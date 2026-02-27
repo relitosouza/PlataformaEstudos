@@ -12,7 +12,7 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/cursos" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Cursos</Link>
-          <Link to="/trilha" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Biblioteca de Vídeos</Link>
+          <Link to="/biblioteca-videos" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Biblioteca de Vídeos</Link>
           <Link to="/manuais" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Manuais</Link>
           <Link to="/certificados" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Certificados</Link>
           <Link to="/comunidade" className="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors">Comunidade</Link>

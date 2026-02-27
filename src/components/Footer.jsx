@@ -19,7 +19,7 @@ export default function Footer() {
           <h4 className="text-slate-900 dark:text-white font-bold mb-6 text-sm">Plataforma</h4>
           <ul className="flex flex-col gap-3 text-sm text-slate-500">
             <li><Link className="hover:text-primary transition-colors" to="/cursos">Cursos</Link></li>
-            <li><Link className="hover:text-primary transition-colors" to="/trilha">Biblioteca de Vídeos</Link></li>
+            <li><Link className="hover:text-primary transition-colors" to="/biblioteca-videos">Biblioteca de Vídeos</Link></li>
             <li><Link className="hover:text-primary transition-colors" to="/manuais">Manuais</Link></li>
             <li><Link className="hover:text-primary transition-colors text-primary font-bold" to="/cms/login">Entrar no Painel CMS</Link></li>
           </ul>

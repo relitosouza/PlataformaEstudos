@@ -1,6 +1,41 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function CadastrarVideo() {
+    const navigate = useNavigate();
+    const [titulo, setTitulo] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [dificuldade, setDificuldade] = useState('beg');
+    const [urlVideo, setUrlVideo] = useState('');
+
+    const handleSave = () => {
+        if (!titulo || !urlVideo) {
+            alert("Por favor, preencha o título e a URL do vídeo.");
+            return;
+        }
+
+        const newVideo = {
+            id: Date.now(),
+            titulo,
+            descricao,
+            categoria,
+            dificuldade,
+            urlVideo,
+            thumbnail: "https://lh3.googleusercontent.com/aida-public/AB6AXuDITps9XyMberRBHl3UAguTs7RBjOWDTmUMnHT9-6cKXH0S-dck5KuL2fDv4tMSaqJX5HGNMxt36ZlHSQo4eKGiDpqWg-PzXJfheBTnoae_YMPLRSnTeVc8sRqeuXUDx8lNaeub6P6qpveFkp3t4IINexd8uTs-Tv2IJOlHF3Pgiu6Xp1cYtDjO_yQ41Mk29zKjoiqVbhhc-EOctZXw1L2DR7rd6CZridkP08ZYA4vedRBDr0M-w-JxDHbwz2RzJx8npVe-azlulc4T", // Default mockup
+            duration: "10:00",
+            views: "Novo",
+            date: new Date().toLocaleDateString('pt-BR')
+        };
+
+        const existingVideos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
+        existingVideos.unshift(newVideo);
+        localStorage.setItem('cadastrados_videos', JSON.stringify(existingVideos));
+
+        alert("Vídeo cadastrado com sucesso!");
+        navigate('/biblioteca-videos');
+    }
+
     return (
         <>
             {/* Top Navigation */}
@@ -68,16 +103,16 @@ export default function CadastrarVideo() {
                                 <div className="space-y-4">
                                     <label className="flex flex-col gap-2">
                                         <span className="text-slate-700 dark:text-slate-300 text-sm font-semibold">Título da Aula</span>
-                                        <input className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base font-normal placeholder:text-slate-400" placeholder="Ex: Introdução ao Design de Interface" type="text" />
+                                        <input value={titulo} onChange={e => setTitulo(e.target.value)} className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base font-normal placeholder:text-slate-400" placeholder="Ex: Introdução ao Design de Interface" type="text" />
                                     </label>
                                     <label className="flex flex-col gap-2">
                                         <span className="text-slate-700 dark:text-slate-300 text-sm font-semibold">Descrição</span>
-                                        <textarea className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary text-base font-normal placeholder:text-slate-400" placeholder="Descreva os principais tópicos abordados nesta aula..." rows="4"></textarea>
+                                        <textarea value={descricao} onChange={e => setDescricao(e.target.value)} className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary text-base font-normal placeholder:text-slate-400" placeholder="Descreva os principais tópicos abordados nesta aula..." rows="4"></textarea>
                                     </label>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <label className="flex flex-col gap-2">
                                             <span className="text-slate-700 dark:text-slate-300 text-sm font-semibold">Categoria</span>
-                                            <select className="form-select w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base" defaultValue="">
+                                            <select value={categoria} onChange={e => setCategoria(e.target.value)} className="form-select w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base">
                                                 <option value="" disabled>Selecione uma categoria</option>
                                                 <option value="design">Design de Produto</option>
                                                 <option value="dev">Desenvolvimento Web</option>
@@ -87,7 +122,7 @@ export default function CadastrarVideo() {
                                         </label>
                                         <label className="flex flex-col gap-2">
                                             <span className="text-slate-700 dark:text-slate-300 text-sm font-semibold">Nível de Dificuldade</span>
-                                            <select className="form-select w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base" defaultValue="beg">
+                                            <select value={dificuldade} onChange={e => setDificuldade(e.target.value)} className="form-select w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base">
                                                 <option value="beg">Iniciante</option>
                                                 <option value="int">Intermediário</option>
                                                 <option value="adv">Avançado</option>
@@ -106,7 +141,7 @@ export default function CadastrarVideo() {
                                     <label className="flex flex-col gap-2">
                                         <span className="text-slate-700 dark:text-slate-300 text-sm font-semibold">URL do Vídeo</span>
                                         <div className="relative">
-                                            <input className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base font-normal pl-12" placeholder="https://youtube.com/watch?v=..." type="text" />
+                                            <input value={urlVideo} onChange={e => setUrlVideo(e.target.value)} className="form-input w-full rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary focus:ring-primary h-12 text-base font-normal pl-12" placeholder="https://youtube.com/watch?v=..." type="text" />
                                             <span className="material-symbols-outlined absolute left-4 top-3 text-slate-400">link</span>
                                         </div>
                                         <p className="text-xs text-slate-500 mt-1">Suporte para YouTube, Vimeo ou link interno mp4.</p>
@@ -162,7 +197,7 @@ export default function CadastrarVideo() {
                             </section>
 
                             <section className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-                                <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
+                                <button onClick={handleSave} className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20">
                                     <span className="material-symbols-outlined">publish</span>
                                     Publicar Aula
                                 </button>

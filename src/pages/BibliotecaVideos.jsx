@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
-export default function Trilha() {
+export default function BibliotecaVideos() {
+  const [videosCadastrados, setVideosCadastrados] = useState([]);
+
+  useEffect(() => {
+    const videos = JSON.parse(localStorage.getItem('cadastrados_videos') || '[]');
+    setVideosCadastrados(videos);
+  }, []);
+
   return (
     <div className="flex flex-1 flex-row w-full max-w-[1440px] mx-auto">
       {/* Sidebar */}
@@ -81,6 +89,23 @@ export default function Trilha() {
             <a className="text-primary text-sm font-semibold hover:underline" href="#">Ver tudo</a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Vídeos Cadastrados Dinamicamente */}
+            {videosCadastrados.map((video) => (
+              <Link key={video.id} to="/aula" className="group flex flex-col gap-3">
+                <div className="relative aspect-video rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800 cursor-pointer">
+                  <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: `url('${video.thumbnail}')` }}></div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                  </div>
+                  <span className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-1.5 py-0.5 rounded font-medium">{video.duration}</span>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h4 className="text-slate-900 dark:text-white font-semibold line-clamp-2 group-hover:text-primary transition-colors">{video.titulo}</h4>
+                  <p className="text-slate-500 text-xs uppercase">{video.categoria || "Geral"} • {video.date}</p>
+                </div>
+              </Link>
+            ))}
+
             {/* Video Card 1 */}
             <Link to="/aula" className="group flex flex-col gap-3">
               <div className="relative aspect-video rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800 cursor-pointer">

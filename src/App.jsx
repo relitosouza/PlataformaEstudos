@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Trilha from './pages/Trilha'
+import BibliotecaVideos from './pages/BibliotecaVideos'
 import Sobre from './pages/Sobre'
 import Aula from './pages/Aula'
 import Manuais from './pages/Manuais'
@@ -25,7 +25,7 @@ export default function App() {
         {!isCMS && <Header />}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/trilha" element={<Trilha />} />
+          <Route path="/biblioteca-videos" element={<BibliotecaVideos />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/curso" element={<CursoDetalhes />} />
           <Route path="/aula" element={<Aula />} />
